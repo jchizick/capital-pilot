@@ -1,39 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { Arrow, CheckIcon, LineIcon } from './icons'
-import { CONTACT_HREF, metrics, navItems, participationPrinciples, principles } from './content'
-import { PrivateLedgerMark } from './PrivateLedgerMark'
-
-function Brand() {
-  return <a className="brand" href="#top" aria-label="Private Terminal home">
-    <PrivateLedgerMark />
-    <span className="brand-copy"><strong>Private Ledger</strong><small>SMALL-CIRCLE CAPITAL PILOT</small></span>
-  </a>
-}
-
-function Header() {
-  const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    const onKey = (event: KeyboardEvent) => event.key === 'Escape' && setOpen(false)
-    window.addEventListener('scroll', onScroll, { passive: true })
-    window.addEventListener('keydown', onKey)
-    document.body.classList.toggle('menu-open', open)
-    return () => { window.removeEventListener('scroll', onScroll); window.removeEventListener('keydown', onKey); document.body.classList.remove('menu-open') }
-  }, [open])
-  return <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
-    <div className="header-inner">
-      <Brand />
-      <nav className={`nav ${open ? 'is-open' : ''}`} aria-label="Primary navigation" id="primary-nav">
-        {navItems.map((item) => <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>)}
-        <a className="button button-small nav-cta" href="#contact" onClick={() => setOpen(false)}>Read the pilot brief <Arrow /></a>
-      </nav>
-      <button className="menu-button" type="button" aria-expanded={open} aria-controls="primary-nav" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>
-        <span /><span />
-      </button>
-    </div>
-  </header>
-}
+import { CONTACT_HREF, metrics, participationPrinciples, PILOT_BRIEF_HREF, principles } from './content'
+import { PilotBriefPage } from './PilotBriefPage'
+import { Footer, Header } from './SiteChrome'
 
 function Hero() {
   return <section className="hero" id="about" aria-labelledby="hero-title">
@@ -43,7 +12,7 @@ function Hero() {
       <h1 id="hero-title">One trade at a time.<br />Managed with discipline.<br />Stewarded with care.</h1>
       <p className="hero-copy">A small private experiment with family and friends, designed to explore whether my concentrated trading discipline can be applied responsibly to entrusted capital.</p>
       <div className="button-row">
-        <a className="button button-primary" href="#contact">Read the pilot brief <Arrow /></a>
+        <a className="button button-primary" href={PILOT_BRIEF_HREF}>Read the pilot brief <Arrow /></a>
         <a className="button button-secondary" href="#approach">How the pilot works <Arrow down /></a>
       </div>
     </div>
@@ -120,10 +89,6 @@ function FinalInvitation() {
   </div></div></section>
 }
 
-function Footer() {
-  return <footer><div className="container footer-inner"><Brand /><p>For informational purposes only.<br />Not a public offer or solicitation.</p><span className="footer-mark" aria-hidden="true">✦</span></div></footer>
-}
-
 function App() {
   useEffect(() => {
     const els = document.querySelectorAll<HTMLElement>('.reveal')
@@ -131,6 +96,7 @@ function App() {
     els.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
+  if (window.location.pathname.replace(/\/$/, '') === '/pilot-brief') return <PilotBriefPage />
   return <><Header /><main id="top"><Hero /><PilotSnapshot /><ApproachSection /><WhySmallSection /><ParticipationSection /><FinalInvitation /></main><Footer /></>
 }
 

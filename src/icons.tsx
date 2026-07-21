@@ -14,6 +14,11 @@ export function LineIcon({ name, className }: IconProps) {
     hourglass: <><path {...common} d="M9.5 5h29M9.5 43h29M13 5c0 9.5 4.8 14.3 11 19-6.2 4.7-11 9.5-11 19m22-38c0 9.5-4.8 14.3-11 19 6.2 4.7 11 9.5 11 19"/><path {...common} d="m18.5 36 5.5-5 5.5 5"/></>,
     relationship: <><circle {...common} cx="16" cy="15" r="7.5"/><circle {...common} cx="32" cy="15" r="7.5"/><path {...common} d="M3 42v-4c0-7.5 5.8-13 13-13s13 5.5 13 13v4M19 42v-4c0-7.5 5.8-13 13-13s13 5.5 13 13v4"/></>,
     lock: <><rect {...common} x="8" y="20" width="32" height="24" rx="2"/><path {...common} d="M15 20v-6a9 9 0 0 1 18 0v6m-9 9v6"/><circle cx="24" cy="29" r="2" fill="currentColor"/></>,
+    focus: <><circle {...common} cx="24" cy="24" r="15"/><path {...common} d="m13.5 34.5 21-21"/></>,
+    mail: <><rect {...common} x="5" y="10" width="38" height="28" rx="2"/><path {...common} d="m6 12 18 14 18-14"/></>,
+    pulse: <path {...common} d="M4 25h10l4-11 7 22 5-16 4 5h10"/>,
+    document: <><path {...common} d="M11 4h19l8 8v32H11z"/><path {...common} d="M30 4v9h8M17 22h15M17 29h15M17 36h10"/></>,
+    message: <><path {...common} d="M6 8h36v26H20L10 42v-8H6z"/><path {...common} d="M14 17h20M14 24h14"/></>,
   }
   return <svg className={classes} viewBox="0 0 48 48" aria-hidden="true">{paths[name]}</svg>
 }
