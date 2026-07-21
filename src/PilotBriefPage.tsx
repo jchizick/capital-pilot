@@ -6,6 +6,8 @@ import {
 } from './content'
 import { Footer, Header } from './SiteChrome'
 
+const performanceChartUrl = new URL('../images/chart.svg', import.meta.url).href
+
 type BriefSectionHeadingProps = { number: string; id: string; title: string; intro?: string }
 
 function BriefSectionHeading({ number, id, title, intro }: BriefSectionHeadingProps) {
@@ -30,7 +32,7 @@ function PerformanceChartPanel() {
       <strong>+393%</strong>
     </figcaption>
     <div className="performance-chart-visual">
-      <img src="/images/chart.svg" alt="Cumulative personal performance chart showing tracked percentage growth over time" />
+      <img src={performanceChartUrl} alt="Cumulative personal performance chart showing tracked percentage growth over time" />
     </div>
     <p className="performance-chart-disclosure">Operator-reported <i aria-hidden="true">·</i> Unaudited <i aria-hidden="true">·</i> Past performance does not guarantee future results</p>
   </figure>
