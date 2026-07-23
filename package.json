@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "test": "node --test api/inquiry.test.ts",
+    "test": "tsx --test tests/inquiry.test.ts",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
@@ -15,14 +15,16 @@
     "react-dom": "latest"
   },
   "devDependencies": {
-    "@vitejs/plugin-react": "latest",
+    "@eslint/js": "latest",
+    "@types/node": "^24.13.3",
     "@types/react": "latest",
     "@types/react-dom": "latest",
-    "@eslint/js": "latest",
+    "@vitejs/plugin-react": "latest",
     "eslint": "latest",
     "eslint-plugin-react-hooks": "latest",
     "eslint-plugin-react-refresh": "latest",
     "globals": "latest",
+    "tsx": "^4.23.1",
     "typescript": "latest",
     "typescript-eslint": "latest",
     "vite": "latest"

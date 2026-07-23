@@ -9,8 +9,8 @@ import {
   validateInquiry,
   type InquiryEmail,
   type ValidInquiry,
-} from './inquiryCore.ts'
-import { createInquiryHandler } from './inquiry.ts'
+} from '../api/inquiryCore.js'
+import { createInquiryHandler } from '../api/inquiry.js'
 
 const validPayload = {
   source: 'private-conversation',
@@ -31,7 +31,7 @@ const env = {
 
 function validInquiry(): ValidInquiry {
   const result = validateInquiry(validPayload)
-  assert.equal(result.kind, 'valid')
+  if (result.kind !== 'valid') assert.fail(`Expected a valid inquiry, received ${result.kind}`)
   return result.value
 }
 
@@ -47,7 +47,7 @@ function responseRecorder() {
 
 test('accepts and trims a valid inquiry', () => {
   const result = validateInquiry(validPayload)
-  assert.equal(result.kind, 'valid')
+  if (result.kind !== 'valid') assert.fail(`Expected a valid inquiry, received ${result.kind}`)
   assert.equal(result.value.email, 'ada@example.com')
 })
 

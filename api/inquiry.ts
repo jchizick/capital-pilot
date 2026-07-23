@@ -1,5 +1,5 @@
-import { deliverInquiry, readInquiryEnvironment, validateInquiry } from './inquiryCore.ts'
-import type { InquiryEmail, SendEmail } from './inquiryCore.ts'
+import { deliverInquiry, readInquiryEnvironment, validateInquiry } from './inquiryCore.js'
+import type { InquiryEmail, SendEmail } from './inquiryCore.js'
 
 declare const process: { env: Record<string, string | undefined> }
 
