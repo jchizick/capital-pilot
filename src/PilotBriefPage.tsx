@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type ReactNode } from 'react'
 import { Arrow, CheckIcon, LineIcon } from './icons'
 import {
   briefFaqs, briefMetrics, briefPrinciples, briefSections, CONTACT_HREF,
@@ -8,7 +8,7 @@ import { Footer, Header } from './SiteChrome'
 
 const performanceChartUrl = new URL('../images/chart.svg', import.meta.url).href
 
-type BriefSectionHeadingProps = { number: string; id: string; title: string; intro?: string }
+type BriefSectionHeadingProps = { number: string; id: string; title: string; intro?: ReactNode }
 
 function BriefSectionHeading({ number, id, title, intro }: BriefSectionHeadingProps) {
   return <div className="brief-section-heading">
@@ -22,7 +22,7 @@ function PrincipleCard({ title, text, icon }: { title: string; text: string; ico
 }
 
 function MetricCard({ value, label, note, icon }: { value: string; label: string; note: string; icon: string }) {
-  return <article className="brief-card brief-metric"><LineIcon name={icon} /><strong>{value}</strong><h3>{label}</h3><p>{note}</p></article>
+  return <article className={`brief-card brief-metric ${icon === 'book' ? 'brief-metric-book' : ''}`}><LineIcon name={icon} /><strong>{value}</strong><h3>{label}</h3><p>{note}</p></article>
 }
 
 function PerformanceChartPanel() {
@@ -116,7 +116,12 @@ export function PilotBriefPage() {
           </section>
 
           <section className="brief-section reveal" id="track-record" aria-labelledby="track-record-title">
-            <BriefSectionHeading number="03" id="track-record" title="Personal track record" intro="The figures below reflect the operator’s personal trading record. They are operator-reported, unaudited, and should not be interpreted as a guarantee of future performance." />
+            <BriefSectionHeading
+              number="03"
+              id="track-record"
+              title="Personal track record"
+              intro={<>The figures below reflect my personal trading record. They are operator-reported, unaudited, and should not be interpreted as a guarantee of future performance. My approach has also been shaped by years of studying psychology, discipline, and decision-making under pressure—ideas I explored in my book, <em>The Brawler Mind</em>.</>}
+            />
             <div className="brief-metric-grid">{briefMetrics.map((item) => <MetricCard key={item.label} {...item} />)}</div>
             <PerformanceChartPanel />
           </section>

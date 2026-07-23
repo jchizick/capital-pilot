@@ -8,6 +8,7 @@ export function LineIcon({ name, className }: IconProps) {
   const paths: Record<string, React.ReactNode> = {
     trend: <><path {...common} d="M5 36 17 22l8 8 17-20"/><path {...common} d="M35.5 10H42v6.5"/></>,
     calendar: <><rect {...common} x="7" y="10" width="34" height="31" rx="2"/><path {...common} d="M14 6v8m20-8v8M7 19h34"/><circle cx="16" cy="27.5" r=".9" fill="currentColor"/><circle cx="24" cy="27.5" r=".9" fill="currentColor"/><circle cx="32" cy="27.5" r=".9" fill="currentColor"/><circle cx="16" cy="34.5" r=".9" fill="currentColor"/><circle cx="24" cy="34.5" r=".9" fill="currentColor"/><circle cx="32" cy="34.5" r=".9" fill="currentColor"/></>,
+    book: <><path {...common} d="M5 10.5h8.5c4.5 0 8 1.8 10.5 5.2v25.8c-2.5-3.4-6-5.2-10.5-5.2H5z"/><path {...common} d="M43 10.5h-8.5c-4.5 0-8 1.8-10.5 5.2v25.8c2.5-3.4 6-5.2 10.5-5.2H43z"/></>,
     people: <><circle {...common} cx="24" cy="16" r="7"/><circle {...common} cx="11" cy="21" r="5"/><circle {...common} cx="37" cy="21" r="5"/><path {...common} d="M12 41v-3c0-7 5-12 12-12s12 5 12 12v3M3 39v-3c0-5 4-9 9-9m24 0c5 0 9 4 9 9v3"/></>,
     target: <><circle {...common} cx="24" cy="24" r="15"/><circle {...common} cx="24" cy="24" r="9"/><path {...common} d="M24 3v42M3 24h42"/></>,
     shield: <><path {...common} d="M24 4c6 4 11 5 16 6v12c0 11-6 18-16 23C14 40 8 33 8 22V10c5-1 10-2 16-6Z"/><path {...common} d="m17 18 14 14m0-14L17 32"/></>,

@@ -76,7 +76,7 @@ export const briefPrinciples = [
 export const briefMetrics = [
   { value: '+393%', label: 'Cumulative personal result', note: 'Operator-reported', icon: 'trend' },
   { value: '588', label: 'Days tracked', note: 'Measured performance period', icon: 'calendar' },
-  { value: 'Small circle', label: 'Participation model', note: 'Family and friends', icon: 'people' },
+  { value: 'The\u00a0Brawler Mind', label: 'Book & operating philosophy', note: 'A study of discipline, psychology, and performance under pressure.', icon: 'book' },
 ]
 
 export const pilotObjectives = [
