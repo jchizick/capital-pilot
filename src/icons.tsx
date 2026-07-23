@@ -19,6 +19,12 @@ export function LineIcon({ name, className }: IconProps) {
     pulse: <path {...common} d="M4 25h10l4-11 7 22 5-16 4 5h10"/>,
     document: <><path {...common} d="M11 4h19l8 8v32H11z"/><path {...common} d="M30 4v9h8M17 22h15M17 29h15M17 36h10"/></>,
     message: <><path {...common} d="M6 8h36v26H20L10 42v-8H6z"/><path {...common} d="M14 17h20M14 24h14"/></>,
+    family: <><circle {...common} cx="18" cy="16" r="6"/><circle {...common} cx="31" cy="18" r="5"/><path {...common} d="M7 40v-4c0-7 4.5-12 11-12s11 5 11 12v4m0-14c6 0 10 4.5 10 11v3"/></>,
+    friend: <><circle {...common} cx="16" cy="16" r="6"/><circle {...common} cx="32" cy="16" r="6"/><path {...common} d="M5 41v-4c0-7 4.5-12 11-12s11 5 11 12v4m-6-13c2.5-2 6-3 11-3 6.5 0 11 5 11 12v4"/></>,
+    professional: <><rect {...common} x="5" y="15" width="38" height="25" rx="2"/><path {...common} d="M18 15v-5h12v5M5 24c10 5 28 5 38 0M21 27h6"/></>,
+    referred: <><circle {...common} cx="24" cy="14" r="6"/><path {...common} d="M12 40v-4c0-7 5-12 12-12s12 5 12 12v4M8 15h5m-2.5-2.5v5M37 14h5m-2.5-2.5v5"/></>,
+    more: <><circle cx="12" cy="24" r="1.8" fill="currentColor"/><circle cx="24" cy="24" r="1.8" fill="currentColor"/><circle cx="36" cy="24" r="1.8" fill="currentColor"/></>,
+    info: <><circle {...common} cx="24" cy="24" r="19"/><path {...common} d="M24 21v13"/><circle cx="24" cy="14" r="1.3" fill="currentColor"/></>,
   }
   return <svg className={classes} viewBox="0 0 48 48" aria-hidden="true">{paths[name]}</svg>
 }
@@ -29,4 +35,8 @@ export function Arrow({ down = false }: { down?: boolean }) {
 
 export function CheckIcon() {
   return <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+}
+
+export function Chevron() {
+  return <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5" fill="none" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round" /></svg>
 }

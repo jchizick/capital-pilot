@@ -23,11 +23,36 @@ export const participationPrinciples = [
   { title: 'Long-term mindset', text: 'Patience, understanding, and mutual respect', icon: 'lock' },
 ]
 
-// TODO: Replace with the final private contact destination before launch.
-export const CONTACT_HREF = '#contact'
+export const CONTACT_HREF = '/private-conversation'
 
 export const PILOT_BRIEF_HREF = '/pilot-brief'
 export const PILOT_BRIEF_UPDATED = 'July 20, 2026'
+
+export const conversationSteps = [
+  'Relationship',
+  'Reason for reaching out',
+  'Personal context',
+  'Risk acknowledgment',
+  'Contact details',
+  'Review & submit',
+]
+
+export const relationshipOptions = [
+  { value: 'family', label: 'Family', icon: 'family' },
+  { value: 'friend', label: 'Friend', icon: 'friend' },
+  { value: 'professional', label: 'Professional relationship', icon: 'professional' },
+  { value: 'referred', label: 'Referred by someone', icon: 'referred' },
+  { value: 'other', label: 'Other', icon: 'more' },
+]
+
+export const discussionOptions = [
+  'Learning more about the pilot',
+  'Potential participation',
+  'Understanding the trading approach',
+  'Reviewing the personal track record',
+  'Discussing risk and how the pilot may operate',
+  'Something else',
+]
 
 export const briefSections = [
   { number: '01', id: 'purpose', title: 'Purpose of the pilot' },

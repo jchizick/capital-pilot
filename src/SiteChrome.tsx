@@ -10,7 +10,7 @@ export function Brand({ brief = false }: { brief?: boolean }) {
   </a>
 }
 
-export function Header({ brief = false }: { brief?: boolean }) {
+export function Header({ brief = false, conversation = false }: { brief?: boolean; conversation?: boolean }) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   useEffect(() => {
@@ -26,7 +26,10 @@ export function Header({ brief = false }: { brief?: boolean }) {
     <div className="header-inner">
       <Brand brief={brief} />
       <nav className={`nav ${open ? 'is-open' : ''}`} aria-label="Primary navigation" id="primary-nav">
-        {navItems.map((item) => <a key={item.href} href={brief ? `/${item.href}` : item.href} onClick={() => setOpen(false)}>{item.label}</a>)}
+        {navItems.map((item) => {
+          const active = conversation && item.href === '#participation'
+          return <a key={item.href} href={(brief || conversation) ? `/${item.href}` : item.href} className={active ? 'is-active' : ''} aria-current={active ? 'page' : undefined} onClick={() => setOpen(false)}>{item.label}</a>
+        })}
         <a className={`button button-small nav-cta ${brief ? 'is-active' : ''}`} href={PILOT_BRIEF_HREF} aria-current={brief ? 'page' : undefined} onClick={() => setOpen(false)}>Read the pilot brief <Arrow /></a>
       </nav>
       <button className="menu-button" type="button" aria-expanded={open} aria-controls="primary-nav" aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen((value) => !value)}><span /><span /></button>

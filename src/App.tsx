@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import { Arrow, CheckIcon, LineIcon } from './icons'
 import { CONTACT_HREF, metrics, participationPrinciples, PILOT_BRIEF_HREF, principles } from './content'
 import { PilotBriefPage } from './PilotBriefPage'
+import { PrivateConversationPage } from './PrivateConversationPage'
 import { Footer, Header } from './SiteChrome'
 
 function Hero() {
@@ -96,7 +97,9 @@ function App() {
     els.forEach((el) => observer.observe(el))
     return () => observer.disconnect()
   }, [])
-  if (window.location.pathname.replace(/\/$/, '') === '/pilot-brief') return <PilotBriefPage />
+  const path = window.location.pathname.replace(/\/$/, '')
+  if (path === '/pilot-brief') return <PilotBriefPage />
+  if (path === '/private-conversation') return <PrivateConversationPage />
   return <><Header /><main id="top"><Hero /><PilotSnapshot /><ApproachSection /><WhySmallSection /><ParticipationSection /><FinalInvitation /></main><Footer /></>
 }
 

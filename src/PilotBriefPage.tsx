@@ -96,7 +96,7 @@ export function PilotBriefPage() {
             <p className="eyebrow">Private Orientation Document</p>
             <h1 id="brief-title">Pilot Brief</h1>
             <p>This private document provides an overview of the Small-Circle Capital Pilot — its purpose, trading approach, operating structure, and what participation may involve. Reading it is informational only and does not represent an offer, commitment, or guarantee.</p>
-            <div className="button-row"><a className="button button-primary" href={`/${CONTACT_HREF}`}>Start a private conversation <Arrow /></a><a className="button button-secondary" href="/">Return to overview</a></div>
+            <div className="button-row"><a className="button button-primary" href={CONTACT_HREF}>Start a private conversation <Arrow /></a><a className="button button-secondary" href="/">Return to overview</a></div>
           </div>
           <div className="brief-private-panel"><LineIcon name="lock" /><div><strong>Private and personal</strong><span>For invited participants only.</span></div></div>
         </div>
@@ -150,7 +150,7 @@ export function PilotBriefPage() {
           <section className="brief-section closing-section reveal" id="closing" aria-labelledby="closing-title">
             <BriefSectionHeading number="09" id="closing" title="Closing note" />
             <div className="brief-prose"><p>This pilot is built on trust, alignment, and a shared commitment to disciplined decision-making.</p><p>Reading this brief does not create an application, agreement, or obligation. If the approach resonates, the next step is simply a private conversation to determine whether further discussion makes sense.</p></div>
-            <div className="button-row"><a className="button button-primary" href={`/${CONTACT_HREF}`}>Start a private conversation <Arrow /></a><a className="button button-secondary" href="/">Return to overview</a></div>
+            <div className="button-row"><a className="button button-primary" href={CONTACT_HREF}>Start a private conversation <Arrow /></a><a className="button button-secondary" href="/">Return to overview</a></div>
           </section>
         </article>
       </div>
